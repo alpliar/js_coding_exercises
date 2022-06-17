@@ -1,6 +1,6 @@
 /**
  * Get fillings from given sandwich
- * @param {{ bread: string, fillings: Array<string>, accompaniment: string }} sandwich - A sandwich
+ * @param {Sandwich} sandwich - A sandwich
  * @return {Array<string>}
  */
 const getFillings = (sandwich) => {
@@ -10,7 +10,7 @@ const getFillings = (sandwich) => {
 
 /**
  * Check if a person is from Manchester
- * @param {{ name: string, city: string, age: number }} person - A person
+ * @param {Person} person - A person
  * @return {boolean}
  */
 const isFromManchester = (person) => {
@@ -40,7 +40,7 @@ const countSheep = (arr) => {
 
 /**
  * Determines if given person has a postcode starting with M
- * @param {{ name: string, age: number: address: { line1: string, city: string, postCode: string}}} person - A person
+ * @param {PersonWithAddress} person - A person
  * @return {boolean}
  */
 const hasMPostCode = (person) => {
@@ -55,3 +55,35 @@ module.exports = {
   getBusNumbers,
   hasMPostCode,
 };
+
+/**
+ * A sandwich
+ * @typedef {Object} Sandwich
+ * @property {string} bread - The bread
+ * @property {Array<string>} fillings - The fillings
+ * @property {string} accompaniment - The accompaniment
+ */
+
+/**
+ * A person
+ * @typedef {Object} Person
+ * @property {string} name - Person's name
+ * @property {string} city - Person's city
+ * @property {number} age - Person's age
+ */
+
+/**
+ * An Address
+ * @typedef {Object} Address
+ * @property {string} line1 - Person's name
+ * @property {string} city - Person's city
+ * @property {string} postCode - Person's age
+ */
+
+/**
+ * A person with Adddress
+ * @typedef {Object} PersonWithAddress
+ * @property {string} name - Person's name
+ * @property {number} age - Person's age
+ * @property {Address} address - Person's address
+ */
