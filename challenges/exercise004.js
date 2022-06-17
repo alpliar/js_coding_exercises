@@ -62,7 +62,7 @@ const getSquareRoots = (nums) => {
 
 /**
  * Get sentences that contains given string
- * @param {Array<string>} nums - List of sentences
+ * @param {Array<string>} sentences - List of sentences
  * @param {string} str - String to find
  * @returns {Array<string>}
  */
