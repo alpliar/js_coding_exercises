@@ -42,7 +42,7 @@ const sumArrays = (arrs) => {
 
 /**
  * Get a copy of given array, with first & last entries swapped
- * @param {Array<number>} arrs - A list of numbers
+ * @param {Array<number>} arr - A list of numbers
  * @returns {Array<number>}
  */
 const arrShift = (arr) => {
