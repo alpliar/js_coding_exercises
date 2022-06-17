@@ -74,7 +74,7 @@ const getSquareRoots = (nums) => {
 
 /**
  * Get sentences that contains given string
- * @param {Array<string>} nums - List of sentences
+ * @param {Array<string>} sentences - List of sentences
  * @param {string} str - String to find
  * @returns {Array<string>}
  */
@@ -82,7 +82,9 @@ const findSentencesContaining = (sentences, str) => {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
   // Your code here
-  return sentences.filter((sentence) => sentence.i);
+  return sentences.filter((sentence) =>
+    sentence.toLocaleLowerCase().includes(str)
+  );
 };
 
 /**
@@ -93,6 +95,7 @@ const findSentencesContaining = (sentences, str) => {
 const getLongestSides = (triangles) => {
   if (!triangles) throw new Error("triangles is required");
   // Your code here
+  return triangles.map((triangle) => Math.max(...triangle));
 };
 
 module.exports = {
