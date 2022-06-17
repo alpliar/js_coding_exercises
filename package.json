@@ -4,7 +4,13 @@
 	"description": "A repository of JavaScript challenges for you to work on throughout the course",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest",
+		"test all": "jest",
+		"test exercise001": "jest test/exercise001.test.js",
+		"test exercise002": "jest test/exercise002.test.js",
+		"test exercise003": "jest test/exercise003.test.js",
+		"test exercise004": "jest test/exercise004.test.js",
+		"test exercise005": "jest test/exercise005.test.js",
+		"test exercise008": "jest test/exercise008.test.js",
 		"eslint": "eslint ./"
 	},
 	"repository": {
