@@ -1,5 +1,5 @@
 /**
- * Get square root of given numbers
+ * Get square of given numbers
  * @param {Array<number>} nums - List of numbers
  * @returns {Array<number>}
  */
