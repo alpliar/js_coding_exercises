@@ -8,7 +8,10 @@ const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
   // Your code here!
-  return;
+  const indexOfNumber = nums.indexOf(n);
+  const isNumberFound = indexOfNumber !== -1;
+  if (!isNumberFound || indexOfNumber === nums.length - 1) return null;
+  return nums[indexOfNumber + 1];
 };
 
 /**
@@ -19,6 +22,9 @@ const findNextNumber = (nums, n) => {
 const count1sand0s = (str) => {
   if (str === undefined) throw new Error("str is required");
   // Your code here!
+  const noOfZeros = str.replaceAll("1", "").length;
+  const noOfOnes = str.replaceAll("0", "").length;
+  return { 0: noOfZeros, 1: noOfOnes };
 };
 
 /**
@@ -29,6 +35,7 @@ const count1sand0s = (str) => {
 const reverseNumber = (n) => {
   if (n === undefined) throw new Error("n is required");
   // Your code here!
+  return parseInt(n.toString().split("").reverse().join(""));
 };
 
 /**
@@ -39,16 +46,26 @@ const reverseNumber = (n) => {
 const sumArrays = (arrs) => {
   if (arrs === undefined) throw new Error("arrs is required");
   // Your code here!
+  const getSum = (sum, num) => {
+    return sum + num;
+  };
+  return arrs.reduce((sum, arr) => {
+    return sum + arr.reduce(getSum);
+  }, 0);
 };
 
 /**
  * Get a copy of given array, with first & last entries swapped
- * @param {Array<number>} arrs - A list of numbers
+ * @param {Array<number>} arr - A list of numbers
  * @returns {Array<number>}
  */
 const arrShift = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
   // Your code here!
+  if (arr.length < 2) return arr;
+  if (arr.length === 2) return arr.reverse();
+
+  return [[...arr].pop(), ...arr.slice(1, arr.length - 1), [...arr].shift()];
 };
 
 /**
@@ -61,6 +78,12 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   // Your code here!
+  const properties = Object.values(haystack);
+  const hasNeedle =
+    properties.find((property) =>
+      property.toString().toLowerCase().includes(searchTerm.toLowerCase())
+    ) !== undefined;
+  return hasNeedle;
 };
 
 /**
