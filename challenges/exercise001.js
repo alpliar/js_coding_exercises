@@ -69,7 +69,7 @@ const reverseAllWords = (words) => {
 
 /**
  * Returns the number of given users that are Linux users
- * @param {string} users - List of users
+ * @param {Array<{name: string, OS: string, type: string}>} users - List of users
  */
 const countLinuxUsers = (users) => {
   if (users === undefined) throw new Error("users is required");
