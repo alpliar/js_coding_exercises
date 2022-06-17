@@ -1,6 +1,7 @@
 /**
  * Get fillings from given sandwich
  * @param {{ bread: string, fillings: Array<string>, accompaniment: string }} sandwich - A sandwich
+ * @return {Array<string>}
  */
 const getFillings = (sandwich) => {
   if (sandwich === undefined) throw new Error("ingredients is required");
@@ -10,6 +11,7 @@ const getFillings = (sandwich) => {
 /**
  * Check if a person is from Manchester
  * @param {{ name: string, city: string, age: number }} person - A person
+ * @return {boolean}
  */
 const isFromManchester = (person) => {
   if (person === undefined) throw new Error("person is required");
@@ -19,6 +21,7 @@ const isFromManchester = (person) => {
 /**
  * Determines how many buses are required for given number of people (a bus can hold 40 people)
  * @param {number} people - Number of people to transport
+ * @return {number}
  */
 const getBusNumbers = (people) => {
   if (people === undefined) throw new Error("people is required");
@@ -28,6 +31,7 @@ const getBusNumbers = (people) => {
 /**
  * Determines how many sheeps given array contains
  * @param {Array<string>} arr - List of animal names
+ * @return {number}
  */
 const countSheep = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
@@ -37,6 +41,7 @@ const countSheep = (arr) => {
 /**
  * Determines if given person has a postcode starting with M
  * @param {{ name: string, age: number: address: { line1: string, city: string, postCode: string}}} person - A person
+ * @return {boolean}
  */
 const hasMPostCode = (person) => {
   if (person === undefined) throw new Error("person is required");

@@ -1,6 +1,7 @@
 /**
  * Capitalizes a string (ex: "hello" => "Hello")
  * @param {string} word - The word to capitalize.
+ * @return {string}
  */
 const capitalize = (word) => {
   if (word === undefined) throw new Error("word is required");
@@ -11,6 +12,7 @@ const capitalize = (word) => {
  * Converts a person's name to initials (ex: ("Roger","Sterling") => "R.S")
  * @param {string} firstName - Person's firstname.
  * @param {string} lastName - Person's lastname.
+ * @return {string}
  */
 const generateInitials = (firstName, lastName) => {
   if (firstName === undefined) throw new Error("firstName is required");
@@ -22,6 +24,7 @@ const generateInitials = (firstName, lastName) => {
  * Adds VAT to a given price using given VAT rate
  * @param {number} originalPrice - The original price (tax-free).
  * @param {number} vatRate - The VAT rate (expressed as percentage) to apply (ex: 20 for 20% VAT).
+ * @return {number}
  */
 const addVAT = (originalPrice, vatRate) => {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
@@ -33,6 +36,7 @@ const addVAT = (originalPrice, vatRate) => {
  * Gets price after reduction
  * @param {number} originalPrice - The original price (tax-free).
  * @param {number} reduction - The reduction (expressed as percentage) to apply (ex: 50 for 50% discount).
+ * @return {number}
  */
 const getSalePrice = (originalPrice, reduction) => {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
@@ -43,6 +47,7 @@ const getSalePrice = (originalPrice, reduction) => {
 /**
  * Gets the middle character of a given string
  * @param {string} str - String to process
+ * @return {string}
  */
 const getMiddleCharacter = (str) => {
   if (str === undefined) throw new Error("str is required");
@@ -52,6 +57,7 @@ const getMiddleCharacter = (str) => {
 /**
  * Reverses letters in a given word
  * @param {string} word - Word to reverse
+ * @return {string}
  */
 const reverseWord = (word) => {
   if (word === undefined) throw new Error("word is required");
@@ -61,6 +67,7 @@ const reverseWord = (word) => {
 /**
  * Reverses letters of a given list of words
  * @param {string} words - Words to reverse
+ * @return {string}
  */
 const reverseAllWords = (words) => {
   if (words === undefined) throw new Error("words is required");
@@ -70,6 +77,7 @@ const reverseAllWords = (words) => {
 /**
  * Returns the number of given users that are Linux users
  * @param {Array<{name: string, OS: string, type: string}>} users - List of users
+ * @return {number}
  */
 const countLinuxUsers = (users) => {
   if (users === undefined) throw new Error("users is required");
@@ -79,6 +87,7 @@ const countLinuxUsers = (users) => {
 /**
  * Returns the mean score of given scores
  * @param {number[]} scores - List of scores
+ * @return {number}
  */
 const getMeanScore = (scores) => {
   if (scores === undefined) throw new Error("scores is required");
@@ -88,6 +97,7 @@ const getMeanScore = (scores) => {
 /**
  * Checks if a number is divisible by 3 or 5
  * @param {number} n - Number to check
+ * @return {string|number}
  */
 const simpleFizzBuzz = (n) => {
   if (n === undefined) throw new Error("n is required");
