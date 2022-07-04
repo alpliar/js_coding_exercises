@@ -32,8 +32,9 @@ describe("isValidDNA", () => {
   test("returns true for correct DNA", () => {
     expect(isValidDNA("GATTACA")).toBe(true);
   });
-  test("should not be case sensitive", () => {
-    expect(isValidDNA("gattaca")).toBe(true);
+  test("should be case sensitive", () => {
+    expect(isValidDNA("gattaca")).toBe(false);
+    expect(isValidDNA("GatTaca")).toBe(false);
   });
 });
 
