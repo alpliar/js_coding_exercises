@@ -3,6 +3,7 @@ const {
   createRange,
   getScreentimeAlertList,
   hexToRGB,
+  findWinner,
 } = require("../challenges/exercise007");
 
 describe("sumDigits", () => {
@@ -100,5 +101,73 @@ describe("hexToRGB", () => {
   });
   test("returns correct value for teal", () => {
     expect(hexToRGB("008080")).toBe("rgb(0,128,128)");
+  });
+});
+
+describe("findWinner", () => {
+  test("returns 'X' if winner is X (vertical)", () => {
+    expect(
+      findWinner([
+        ["X", "0", null],
+        ["X", null, "0"],
+        ["X", null, "0"],
+      ])
+    ).toBe("X");
+  });
+  test("returns 'X' if winner is X (horizontal)", () => {
+    expect(
+      findWinner([
+        ["X", "X", "X"],
+        [null, null, "0"],
+        ["0", null, "0"],
+      ])
+    ).toBe("X");
+  });
+  test("returns 'X' if winner is X (diagonal)", () => {
+    expect(
+      findWinner([
+        ["X", null, "0"],
+        [null, "X", "0"],
+        ["0", null, "X"],
+      ])
+    ).toBe("X");
+  });
+
+  test("returns '0' if winner is 0 (vertical)", () => {
+    expect(
+      findWinner([
+        ["0", "X", null],
+        ["0", null, "X"],
+        ["0", null, "X"],
+      ])
+    ).toBe("0");
+  });
+  test("returns '0' if winner is 0 (horizontal)", () => {
+    expect(
+      findWinner([
+        ["0", "0", "0"],
+        [null, null, "X"],
+        ["X", null, "X"],
+      ])
+    ).toBe("0");
+  });
+  test("returns '0' if winner is 0 (diagonal)", () => {
+    expect(
+      findWinner([
+        ["0", null, "X"],
+        [null, "0", "X"],
+        ["X", null, "0"],
+      ])
+    ).toBe("0");
+  });
+
+  test("returns null if there is currently no winner", () => {
+    expect(
+      findWinner([
+        ["X", "0", "0"],
+        ["X", null, "0"],
+        ["0", "X", "X"],
+      ])
+    ).toBe(null);
   });
 });
