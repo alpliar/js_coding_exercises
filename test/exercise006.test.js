@@ -3,6 +3,7 @@ const {
   isValidDNA,
   getComplementaryDNA,
   isItPrime,
+  createMatrix,
 } = require("../challenges/exercise006");
 
 describe("sumMultiples", () => {
@@ -66,5 +67,29 @@ describe("isItPrime", () => {
     expect(isItPrime(23)).toBe(true);
     expect(isItPrime(37)).toBe(true);
     expect(isItPrime(67)).toBe(true);
+  });
+});
+
+describe("createMatrix", () => {
+  test("returns empty matrix for 0 and 'foo'", () => {
+    expect(createMatrix(0, "foo")).toBe([]);
+  });
+  test("returns correct matrix for 3 and 'foo'", () => {
+    expect(createMatrix(3, "foo")).toBe([
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+    ]);
+  });
+  test("returns correct matrix for 7 and 'bar'", () => {
+    expect(createMatrix(7, "bar")).toBe([
+      ["bar", "bar", "bar"],
+      ["bar", "bar", "bar"],
+      ["bar", "bar", "bar"],
+      ["bar", "bar", "bar"],
+      ["bar", "bar", "bar"],
+      ["bar", "bar", "bar"],
+      ["bar", "bar", "bar"],
+    ]);
   });
 });
