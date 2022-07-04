@@ -4,6 +4,7 @@ const {
   getComplementaryDNA,
   isItPrime,
   createMatrix,
+  areWeCovered,
 } = require("../challenges/exercise006");
 
 describe("sumMultiples", () => {
@@ -91,5 +92,37 @@ describe("createMatrix", () => {
       ["bar", "bar", "bar"],
       ["bar", "bar", "bar"],
     ]);
+  });
+});
+
+describe("areWeCovered", () => {
+  test("returns false if there are less than 3 workers on given day", () => {
+    expect(
+      areWeCovered(
+        [
+          { name: "Jake", rota: ["Monday", "Tuesday", "Friday"] },
+          {
+            name: "Finn",
+            rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"],
+          },
+        ],
+        "Tuesday"
+      )
+    ).toBe(false);
+  });
+  test("returns true if there are at least 3 workers on given day", () => {
+    expect(
+      areWeCovered(
+        [
+          { name: "Jake", rota: ["Monday", "Tuesday", "Friday"] },
+          { name: "Finn", rota: ["Monday", "Tuesday", "Friday"] },
+          {
+            name: "Lemongrab",
+            rota: ["Monday"],
+          },
+        ],
+        "Monday"
+      )
+    ).toBe(true);
   });
 });
