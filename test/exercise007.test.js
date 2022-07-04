@@ -2,6 +2,7 @@ const {
   sumDigits,
   createRange,
   getScreentimeAlertList,
+  hexToRGB,
 } = require("../challenges/exercise007");
 
 describe("sumDigits", () => {
@@ -84,5 +85,20 @@ describe("getScreentimeAlertList", () => {
   });
   test("returns empty array if no user has used more than 100 minutes of screentime on given date", () => {
     expect(getScreentimeAlertList(usage, "2019-06-11")).toBe([]);
+  });
+});
+
+describe("hexToRGB", () => {
+  test("returns correct value for black", () => {
+    expect(hexToRGB("000000")).toBe("rgb(0,0,0)");
+  });
+  test("returns correct value for white", () => {
+    expect(hexToRGB("FFFFFF")).toBe("rgb(255,255,255)");
+  });
+  test("returns correct value for tomato", () => {
+    expect(hexToRGB("FF6347")).toBe("rgb(255,99,71)");
+  });
+  test("returns correct value for teal", () => {
+    expect(hexToRGB("008080")).toBe("rgb(0,128,128)");
   });
 });
