@@ -1,4 +1,8 @@
-const { sumDigits, createRange } = require("../challenges/exercise007");
+const {
+  sumDigits,
+  createRange,
+  getScreentimeAlertList,
+} = require("../challenges/exercise007");
 
 describe("sumDigits", () => {
   test("returns given number if there is only one digit", () => {
@@ -29,5 +33,56 @@ describe("createRange", () => {
   });
   test("returns correct range if start and end are equals", () => {
     expect(createRange(0, 0, 25)).toBe([0]);
+  });
+});
+
+describe("getScreentimeAlertList", () => {
+  const usage = [
+    {
+      username: "beth_1234",
+      name: "Beth Smith",
+      screenTime: [
+        {
+          date: "2019-05-01",
+          usage: { twitter: 34, instagram: 22, facebook: 40 },
+        },
+        {
+          date: "2019-05-02",
+          usage: { twitter: 56, instagram: 40, facebook: 31 },
+        },
+        {
+          date: "2019-05-03",
+          usage: { twitter: 12, instagram: 15, facebook: 19 },
+        },
+        {
+          date: "2019-05-04",
+          usage: { twitter: 10, instagram: 56, facebook: 61 },
+        },
+      ],
+    },
+    {
+      username: "sam_j_1989",
+      name: "Sam Jones",
+      screenTime: [
+        {
+          date: "2019-06-11",
+          usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 10 },
+        },
+        {
+          date: "2019-06-13",
+          usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16 },
+        },
+        {
+          date: "2019-06-14",
+          usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31 },
+        },
+      ],
+    },
+  ];
+  test("returns username of user who used more than 100 minutes of screentime", () => {
+    expect(getScreentimeAlertList(usage, "2019-05-04")).toBe(["beth_1234"]);
+  });
+  test("returns empty array if no user has used more than 100 minutes of screentime on given date", () => {
+    expect(getScreentimeAlertList(usage, "2019-06-11")).toBe([]);
   });
 });
