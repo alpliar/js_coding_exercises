@@ -2,6 +2,7 @@ const {
   sumMultiples,
   isValidDNA,
   getComplementaryDNA,
+  isItPrime,
 } = require("../challenges/exercise006");
 
 describe("sumMultiples", () => {
@@ -48,5 +49,22 @@ describe("getComplementaryDNA", () => {
     expect(getComplementaryDNA("TGAC")).toBe("ACTG");
     expect(getComplementaryDNA("AATT")).toBe("TTAA");
     expect(getComplementaryDNA("GGTG")).toBe("CCAC");
+  });
+});
+
+describe("isItPrime", () => {
+  test("returns false for non-prime numbers", () => {
+    expect(isItPrime(0)).toBe(false);
+    expect(isItPrime(1)).toBe(false);
+    expect(isItPrime(4)).toBe(false);
+    expect(isItPrime(90)).toBe(false);
+  });
+  test("returns true for prime numbers", () => {
+    expect(isItPrime(2)).toBe(true);
+    expect(isItPrime(3)).toBe(true);
+    expect(isItPrime(5)).toBe(true);
+    expect(isItPrime(23)).toBe(true);
+    expect(isItPrime(37)).toBe(true);
+    expect(isItPrime(67)).toBe(true);
   });
 });
