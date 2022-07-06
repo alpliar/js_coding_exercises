@@ -79,13 +79,15 @@ const createMatrix = (n, fill) => {
  *  ...etc
  * ]
  * and a day of the week. For the café to run successfully, at least 3 staff members are required per day. The function should return true/false depending on whether there are enough staff scheduled for the given day.
- * @param {Array} staff
+ * @param {Array<{ name: string, rota: Array<string>}>} staff
  * @param {String} day
  * @returns {Boolean}
  */
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+
+  return staff.filter((worker) => worker.rota.includes(day)).length >= 3;
 };
 
 module.exports = {
