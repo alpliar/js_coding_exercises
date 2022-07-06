@@ -1,11 +1,17 @@
 /**
  * This function will receive an array of numbers and should return the sum
  * of any numbers which are a multiple of 3 or 5
- * @param {Array} arr
+ * @param {Array<number>} arr
  * @returns {Number}
  */
 const sumMultiples = (arr) => {
-	if (arr === undefined) throw new Error('arr is required');
+  if (arr === undefined) throw new Error("arr is required");
+  return arr.reduce((sum, num) => {
+    const isMultipleOf3 = num % 3 === 0;
+    const isMultipleOf5 = num % 5 === 0;
+    if (isMultipleOf3 || isMultipleOf5) sum += num;
+    return sum;
+  }, 0);
 };
 
 /**
@@ -14,7 +20,7 @@ const sumMultiples = (arr) => {
  * @returns {Boolean}
  */
 const isValidDNA = (str) => {
-	if (str === undefined) throw new Error('str is required');
+  if (str === undefined) throw new Error("str is required");
 };
 
 /**
@@ -23,7 +29,7 @@ const isValidDNA = (str) => {
  * @returns {String}
  */
 const getComplementaryDNA = (str) => {
-	if (str === undefined) throw new Error('str is required');
+  if (str === undefined) throw new Error("str is required");
 };
 
 /**
@@ -32,7 +38,7 @@ const getComplementaryDNA = (str) => {
  * @returns {Boolean}
  */
 const isItPrime = (n) => {
-	if (n === undefined) throw new Error('n is required');
+  if (n === undefined) throw new Error("n is required");
 };
 
 /**
@@ -47,8 +53,8 @@ const isItPrime = (n) => {
  * @returns {Array}
  */
 const createMatrix = (n, fill) => {
-	if (n === undefined) throw new Error('n is required');
-	if (fill === undefined) throw new Error('fill is required');
+  if (n === undefined) throw new Error("n is required");
+  if (fill === undefined) throw new Error("fill is required");
 };
 
 /**
@@ -64,15 +70,15 @@ const createMatrix = (n, fill) => {
  * @returns {Boolean}
  */
 const areWeCovered = (staff, day) => {
-	if (staff === undefined) throw new Error('staff is required');
-	if (day === undefined) throw new Error('day is required');
+  if (staff === undefined) throw new Error("staff is required");
+  if (day === undefined) throw new Error("day is required");
 };
 
 module.exports = {
-	sumMultiples,
-	isValidDNA,
-	getComplementaryDNA,
-	isItPrime,
-	createMatrix,
-	areWeCovered,
+  sumMultiples,
+  isValidDNA,
+  getComplementaryDNA,
+  isItPrime,
+  createMatrix,
+  areWeCovered,
 };
