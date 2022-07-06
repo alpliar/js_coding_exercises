@@ -104,6 +104,7 @@ const getWordFrequencies = (str) => {
     if (acc[lowerCaseWord])
       return { ...acc, [lowerCaseWord]: acc[lowerCaseWord] + 1 };
   }, {});
+  // Your code here!
 };
 
 module.exports = {

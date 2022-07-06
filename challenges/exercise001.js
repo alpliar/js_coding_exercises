@@ -92,7 +92,7 @@ const reverseAllWords = (words) => {
 
 /**
  * Returns the number of given users that are Linux users
- * @param {Array<{name: string, OS: string, type: string}>} users - List of users
+ * @param {Array<User>} users - List of users
  * @return {number}
  */
 const countLinuxUsers = (users) => {
@@ -151,3 +151,11 @@ module.exports = {
   simpleFizzBuzz,
   toTwoDecimalNumber,
 };
+
+/**
+ * An operating-system user
+ * @typedef {Object} User
+ * @property {string} name - User name
+ * @property {string} OS - Operating system name
+ * @property {string} type - Type of operating system.
+ */

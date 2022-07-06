@@ -52,7 +52,7 @@ const getIntegers = (nums) => {
 
 /**
  * Get a list of cities names from a list of users
- * @param {Array<{ id: number, data: { city: { id: number, displayName: string } } }>} users - A list of users
+ * @param {Array<User>} users - A list of users
  * @returns {Array<string>}
  */
 const getCities = (users) => {
@@ -108,3 +108,24 @@ module.exports = {
   findSentencesContaining,
   getLongestSides,
 };
+
+/**
+ * An user
+ * @typedef {Object} User
+ * @property {number} id - User's id
+ * @property {Data} data - Person's city
+ */
+
+/**
+ * A city
+ * @typedef {Object} City
+ * @property {number} id - City's id
+ * @property {string} displayName - City's name
+ * @property {number} age - Person's age
+ */
+
+/**
+ * An user's data
+ * @typedef {Object} UserData
+ * @property {City} city - User's city
+ */
